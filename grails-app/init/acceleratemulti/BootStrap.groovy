@@ -4,6 +4,7 @@ import usermanagement.Organisation
 import usermanagement.Plan
 import usermanagement.Product
 import usermanagement.Role
+import usermanagement.Subscription
 import usermanagement.User
 import usermanagement.UserRole
 
@@ -14,8 +15,8 @@ class BootStrap {
 
 
 
-        Organisation teraret = new Organisation(name: "Teraret Managed Cloud Private Limited",namespace: "teraret.com",).save()
-        Organisation qualifica = new Organisation(name: "Qualifica Group",namespace: "qualificagroup.it").save()
+        Organisation teraret = new Organisation(name: "Teraret Managed Cloud Private Limited",namespace: "teraret.com",email: "sales@teraret.com",mobile: "+91-8667710055").save()
+        Organisation qualifica = new Organisation(name: "Qualifica Group",namespace: "qualificagroup.it",email: "sales@qualificagroup.it",mobile: "+91-8665510077").save()
 
         User admin = new User(organisation: teraret,username: "babuamuda@gmail.com",password:"B@vana20").save()
         User qualificaadmin = new User(organisation: qualifica,username: "audit@qualificagroup.it",password:"test@123").save()
@@ -23,6 +24,8 @@ class BootStrap {
 
         Product workflow = new Product(name: "Accelerate Workflow",namespace: "accelerate-workflow",user: admin).save()
         Plan freeplan =  new Plan(product: workflow,name: "Free Plan",namespace: "free-plan",features: "Free Plan",price: 0.0,validity: 30,user: admin).save()
+
+         new Subscription(organisation: teraret,plan: freeplan).save()
 
 
         User customer = new User(organisation: teraret,username: "liricsdash2014@gmail.com",password:"lirics@123").save()
