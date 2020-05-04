@@ -1,0 +1,8 @@
+import usermanagement.Plan
+
+model {
+	Iterable<Plan> planList
+}
+
+json tmpl.plan(planList ?: [])
+

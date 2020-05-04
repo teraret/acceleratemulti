@@ -1,0 +1,8 @@
+import crm.OpportunitiesAddress
+
+model {
+	Iterable<OpportunitiesAddress> opportunitiesAddressList
+}
+
+json tmpl.opportunitiesAddress(opportunitiesAddressList ?: [])
+

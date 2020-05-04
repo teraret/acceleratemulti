@@ -1,0 +1,8 @@
+import crm.Lead
+
+model {
+	Iterable<Lead> leadList
+}
+
+json tmpl.lead(leadList ?: [])
+

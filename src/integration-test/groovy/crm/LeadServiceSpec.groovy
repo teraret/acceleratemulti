@@ -1,4 +1,4 @@
-package company
+package crm
 
 import grails.testing.mixin.integration.Integration
 import grails.gorm.transactions.Rollback
@@ -7,37 +7,37 @@ import org.hibernate.SessionFactory
 
 @Integration
 @Rollback
-class CompanyServiceSpec extends Specification {
+class LeadServiceSpec extends Specification {
 
-    CompanyService companyService
+    LeadService leadService
     SessionFactory sessionFactory
 
     private Long setupData() {
         // TODO: Populate valid domain instances and return a valid ID
-        //new Company(...).save(flush: true, failOnError: true)
-        //new Company(...).save(flush: true, failOnError: true)
-        //Company company = new Company(...).save(flush: true, failOnError: true)
-        //new Company(...).save(flush: true, failOnError: true)
-        //new Company(...).save(flush: true, failOnError: true)
+        //new Lead(...).save(flush: true, failOnError: true)
+        //new Lead(...).save(flush: true, failOnError: true)
+        //Lead lead = new Lead(...).save(flush: true, failOnError: true)
+        //new Lead(...).save(flush: true, failOnError: true)
+        //new Lead(...).save(flush: true, failOnError: true)
         assert false, "TODO: Provide a setupData() implementation for this generated test suite"
-        //company.id
+        //lead.id
     }
 
     void "test get"() {
         setupData()
 
         expect:
-        companyService.get(1) != null
+        leadService.get(1) != null
     }
 
     void "test list"() {
         setupData()
 
         when:
-        List<Company> companyList = companyService.list(max: 2, offset: 2)
+        List<Lead> leadList = leadService.list(max: 2, offset: 2)
 
         then:
-        companyList.size() == 2
+        leadList.size() == 2
         assert false, "TODO: Verify the correct instances are returned"
     }
 
@@ -45,30 +45,30 @@ class CompanyServiceSpec extends Specification {
         setupData()
 
         expect:
-        companyService.count() == 5
+        leadService.count() == 5
     }
 
     void "test delete"() {
-        Long companyId = setupData()
+        Long leadId = setupData()
 
         expect:
-        companyService.count() == 5
+        leadService.count() == 5
 
         when:
-        companyService.delete(companyId)
+        leadService.delete(leadId)
         sessionFactory.currentSession.flush()
 
         then:
-        companyService.count() == 4
+        leadService.count() == 4
     }
 
     void "test save"() {
         when:
         assert false, "TODO: Provide a valid instance to save"
-        Company company = new Company()
-        companyService.save(company)
+        Lead lead = new Lead()
+        leadService.save(lead)
 
         then:
-        company.id != null
+        lead.id != null
     }
 }

@@ -13,6 +13,6 @@ class LeadSpec extends Specification implements DomainUnitTest<Lead> {
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
 }

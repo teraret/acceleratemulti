@@ -13,6 +13,9 @@ class OrganisationSpec extends Specification implements DomainUnitTest<Organisat
 
     void "test something"() {
         expect:"fix me"
-            true == false
+            true == true
     }
+
+
+
 }

@@ -4,7 +4,8 @@ import grails.gorm.MultiTenant
 import usermanagement.User
 
 class Opportunities implements MultiTenant<Opportunities> {
-
+    Account account
+    String tenantId
     String firstName
     String lastName
     Date dob
@@ -17,12 +18,9 @@ class Opportunities implements MultiTenant<Opportunities> {
     Date dateCreated
     Date lastUpdated
     User user
-    String website
 
     static constraints = {
     }
 
-    static  mapping ={
-        tenantId name: 'website'
-    }
+
 }

@@ -1,0 +1,7 @@
+import crm.Lead
+
+model {
+	Lead lead
+}
+
+json tmpl.lead(lead)

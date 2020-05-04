@@ -69,7 +69,14 @@ grails:
         defaultScope: singleton
     converters:
         encoding: UTF-8
-
+---
+grails:
+    cors:
+        enabled: true
+---
+sendgrid:
+    username : harishbabu1802
+    password : J@ihanuman1802
 ---
 grails:
     gorm:
@@ -88,20 +95,20 @@ dataSource:
     jmxExport: true
     driverClassName: com.mysql.jdbc.Driver
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: root
-    password: B@vana20
+    username: harishbabu
+    password: Bavana20
 environments:
     development:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://localhost:3306/teraret
+            url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-multi
     test:
         dataSource:
             dbCreate: update
             url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-multi
     production:
         dataSource:
-            dbCreate: none
+            dbCreate: update
             url: jdbc:mysql://teraret-beta-instance.ct1gqorilgvy.ap-south-1.rds.amazonaws.com:3306/teraret-prod
             properties:
                 jmxEnabled: true

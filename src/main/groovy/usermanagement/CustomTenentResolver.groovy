@@ -14,7 +14,7 @@ class CustomTenentResolver implements AllTenantsResolver{
 
     @Override
     Iterable<Serializable> resolveTenantIds() {
-        return DetachedCriteria(Organisation).distinct("website").list()
+        return DetachedCriteria(Organisation).distinct("namespace").list()
     }
 
     @Override
@@ -38,9 +38,7 @@ class CustomTenentResolver implements AllTenantsResolver{
 
         if (springSecurityService.principal instanceof UserDetails){
 
-           return User.findByUsername(((UserDetails)springSecurityService.principal).username).organisation.website
-
-            //return ((UserDetails)springSecurityService.principal).username
+           return User.findByUsername(((UserDetails)springSecurityService.principal).username).organisation.namespace
         }
 
         null

@@ -5,6 +5,8 @@ import usermanagement.User
 
 class Contact implements MultiTenant<Contact> {
 
+    Account account
+    String tenantId
     String firstName
     String lastName
     Date dob
@@ -17,12 +19,7 @@ class Contact implements MultiTenant<Contact> {
     Date dateCreated
     Date lastUpdated
     User user
-    String website
 
     static constraints = {
-    }
-
-    static  mapping ={
-        tenantId name: 'website'
     }
 }

@@ -1,0 +1,8 @@
+import crm.ContactAddress
+
+model {
+	Iterable<ContactAddress> contactAddressList
+}
+
+json tmpl.contactAddress(contactAddressList ?: [])
+

@@ -1,0 +1,7 @@
+import crm.LeadAddress
+
+model {
+	LeadAddress leadAddress
+}
+
+json tmpl.leadAddress(leadAddress)

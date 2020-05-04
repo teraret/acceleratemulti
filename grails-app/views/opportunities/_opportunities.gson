@@ -1,0 +1,7 @@
+import crm.Opportunities
+
+model {
+	Opportunities opportunities
+}
+
+json g.render(opportunities, [resolveTemplate: false])

@@ -1,0 +1,8 @@
+import usermanagement.Organisation
+
+model {
+	Iterable<Organisation> organisationList
+}
+
+json tmpl.organisation(organisationList ?: [])
+

@@ -1,0 +1,7 @@
+import crm.LeadAddress
+
+model {
+	LeadAddress leadAddress
+}
+
+json g.render(leadAddress, [resolveTemplate: false])

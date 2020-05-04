@@ -1,4 +1,4 @@
-package company
+package crm
 
 import spock.lang.*
 import static org.springframework.http.HttpStatus.OK
@@ -10,7 +10,7 @@ import grails.validation.ValidationException
 import grails.testing.web.controllers.ControllerUnitTest
 import grails.testing.gorm.DomainUnitTest
 
-class CompanyControllerSpec extends Specification implements ControllerUnitTest<CompanyController>, DomainUnitTest<Company> {
+class OpportunitiesAddressControllerSpec extends Specification implements ControllerUnitTest<OpportunitiesAddressController>, DomainUnitTest<OpportunitiesAddress> {
 
     def populateValidParams(params) {
         assert params != null
@@ -22,7 +22,7 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the index action returns the correct response"() {
         given:
-        controller.companyService = Mock(CompanyService) {
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
             1 * list(_) >> []
             1 * count() >> 0
         }
@@ -47,8 +47,8 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the save action correctly persists"() {
         given:
-        controller.companyService = Mock(CompanyService) {
-            1 * save(_ as Company)
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
+            1 * save(_ as OpportunitiesAddress)
         }
 
         when:
@@ -56,7 +56,7 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
         request.contentType = JSON_CONTENT_TYPE
         request.method = 'POST'
         populateValidParams(params)
-        request.json = new Company(params)
+        request.json = new OpportunitiesAddress(params)
         controller.save()
 
         then:
@@ -66,9 +66,9 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the save action with an invalid instance"() {
         given:
-        controller.companyService = Mock(CompanyService) {
-            1 * save(_ as Company) >> { Company company ->
-                throw new ValidationException("Invalid instance", company.errors)
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
+            1 * save(_ as OpportunitiesAddress) >> { OpportunitiesAddress opportunitiesAddress ->
+                throw new ValidationException("Invalid instance", opportunitiesAddress.errors)
             }
         }
 
@@ -76,7 +76,7 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
         request.contentType = JSON_CONTENT_TYPE
         request.method = 'POST'
         populateValidParams(params)
-        request.json = new Company(params)
+        request.json = new OpportunitiesAddress(params)
         controller.save()
 
         then:
@@ -86,7 +86,7 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the show action with a null id"() {
         given:
-        controller.companyService = Mock(CompanyService) {
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
             1 * get(null) >> null
         }
 
@@ -99,8 +99,8 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the show action with a valid id"() {
         given:
-        controller.companyService = Mock(CompanyService) {
-            1 * get(2) >> new Company()
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
+            1 * get(2) >> new OpportunitiesAddress()
         }
 
         when:"A domain instance is passed to the show action"
@@ -124,8 +124,8 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the update action correctly persists"() {
         given:
-        controller.companyService = Mock(CompanyService) {
-            1 * save(_ as Company)
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
+            1 * save(_ as OpportunitiesAddress)
         }
 
         when:
@@ -133,7 +133,7 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
         request.contentType = JSON_CONTENT_TYPE
         request.method = 'PUT'
         populateValidParams(params)
-        def instance = new Company(params)
+        def instance = new OpportunitiesAddress(params)
         instance.id = 1
         instance.version = 0
         controller.update(instance)
@@ -145,16 +145,16 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the update action with an invalid instance"() {
         given:
-        controller.companyService = Mock(CompanyService) {
-            1 * save(_ as Company) >> { Company company ->
-                throw new ValidationException("Invalid instance", company.errors)
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
+            1 * save(_ as OpportunitiesAddress) >> { OpportunitiesAddress opportunitiesAddress ->
+                throw new ValidationException("Invalid instance", opportunitiesAddress.errors)
             }
         }
 
         when:
         request.contentType = JSON_CONTENT_TYPE
         request.method = 'PUT'
-        def instance = new Company(params)
+        def instance = new OpportunitiesAddress(params)
         instance.id = 1
         instance.version = 0
         controller.update(instance)
@@ -176,7 +176,7 @@ class CompanyControllerSpec extends Specification implements ControllerUnitTest<
 
     void "Test the delete action with an instance"() {
         given:
-        controller.companyService = Mock(CompanyService) {
+        controller.opportunitiesAddressService = Mock(OpportunitiesAddressService) {
             1 * delete(2)
         }
 

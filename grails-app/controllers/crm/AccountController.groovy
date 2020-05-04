@@ -20,7 +20,11 @@ class AccountController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond accountService.list(params), model:[accountCount: accountService.count()]
+        def count = accountService.count()
+        def offset = params.offset as Long
+        Long currentpage = Math.ceil((params.max+offset)/params.max)
+        Long pagecount = Math.ceil(count/params.max)
+        respond accountService.list(params), model:[accountCount:count,accountPage:currentpage,accountPageCount:pagecount]
     }
 
     def show(Long id) {

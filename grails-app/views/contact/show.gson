@@ -1,0 +1,7 @@
+import crm.Contact
+
+model {
+	Contact contact
+}
+
+json tmpl.contact(contact)

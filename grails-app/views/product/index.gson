@@ -1,0 +1,8 @@
+import usermanagement.Product
+
+model {
+	Iterable<Product> productList
+}
+
+json tmpl.product(productList ?: [])
+

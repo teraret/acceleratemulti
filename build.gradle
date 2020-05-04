@@ -14,12 +14,14 @@ group "acceleratemulti"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
-apply plugin:"war"
+//apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.plugins.views-json"
 
 repositories {
     maven { url "https://repo.grails.org/grails/core" }
+    mavenCentral()
+
 }
 
 configurations {
@@ -63,8 +65,13 @@ dependencies {
     compile "org.grails.plugins:spring-security-core:4.0.0.RC2"
     //Spring Security Rest
     compile "org.grails.plugins:spring-security-rest:3.0.0.RC1"
-    
-    
+    //Send Grid
+    compile 'com.sendgrid:sendgrid-java:4.0.1'
+
+    //Rest Client 
+    compile "io.micronaut:micronaut-http-client"
+
+
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.0"
     testCompile "org.grails:grails-gorm-testing-support"

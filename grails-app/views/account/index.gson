@@ -2,7 +2,16 @@ import crm.Account
 
 model {
 	Iterable<Account> accountList
+	Long accountCount
+	Long accountPage
+    Long accountPageCount
+     }
+
+
+
+json {
+account tmpl.account(accountList ?: [])
+count accountCount
+page accountPage
+totalpages accountPageCount
 }
-
-json tmpl.account(accountList ?: [])
-
