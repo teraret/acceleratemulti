@@ -9,7 +9,6 @@ class Organisation {
     String mobile
     String website
     String fax
-
     Date dateCreated
     Date lastUpdated
 
@@ -18,10 +17,10 @@ class Organisation {
         namespace unique:true
         email unique:true
         mobile unique:true
-
         description nullable: true, blank: true
         establishedDate nullable: true, blank: true
         website nullable: true, blank: true
         fax nullable: true, blank: true
     }
+
 }
