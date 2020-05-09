@@ -18,8 +18,24 @@ class Contact implements MultiTenant<Contact> {
     String zip
     Date dateCreated
     Date lastUpdated
-    User user
+    User createdBy
+    User lastUpdatedBy
+
+    def beforeInsert() {
+
+        createdBy = springSecurityService.getCurrentUser()
+        lastUpdatedBy = springSecurityService.getCurrentUser()
+
+    }
+
+    def beforeUpdate() {
+
+        lastUpdatedBy = springSecurityService.getCurrentUser()
+
+    }
 
     static constraints = {
+        createdBy nullable: true, blank: true
+        lastUpdatedBy nullable: true, blank: true
     }
 }
