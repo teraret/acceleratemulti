@@ -21,7 +21,7 @@ class AccountSpec extends Specification implements DomainUnitTest<Account> {
 
     }
 
-    void 'test name cannot be null'() {
+    void 'mobile number cannot be null'() {
         when:
         domain.mobile = null
         then:
