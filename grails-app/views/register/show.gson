@@ -1,0 +1,7 @@
+import usermanagement.Register
+
+model {
+	Register register
+}
+
+json tmpl.register(register)

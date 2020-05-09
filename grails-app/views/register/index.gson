@@ -1,0 +1,8 @@
+import usermanagement.Register
+
+model {
+	Iterable<Register> registerList
+}
+
+json tmpl.register(registerList ?: [])
+
