@@ -1,9 +1,9 @@
-package resellerclub
+package usermanagement
 
-import grails.testing.services.ServiceUnitTest
+import grails.testing.gorm.DomainUnitTest
 import spock.lang.Specification
 
-class WebsiteServiceSpec extends Specification implements ServiceUnitTest<WebsiteService>{
+class EventSpec extends Specification implements DomainUnitTest<Event> {
 
     def setup() {
     }
