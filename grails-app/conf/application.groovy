@@ -28,3 +28,26 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 
 grails.plugin.springsecurity.rest.token.storage.jwt.secret='teraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretlove'
+
+//grails {
+//  plugin {
+//    springsecurity {
+//
+//      rest {
+//
+//        oauth {
+//
+//          frontendCallbackUrl = { String tokenValue -> "http://teraret.com/facebook#token=${tokenValue}" }
+//          facebook {
+//            client = org.pac4j.oauth.client.FacebookClient
+//            key = '571933560122232'
+//            secret = '4e1f31de3f7bc22028e78433eb025e5e'
+//            scope = 'email,user_location'
+//            fields = 'id,name,first_name,middle_name,last_name,username'
+//            defaultRoles = ['ROLE_USER', 'ROLE_FACEBOOK']
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
