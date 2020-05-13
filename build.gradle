@@ -74,6 +74,9 @@ dependencies {
     //Rest Client 
     compile "io.micronaut:micronaut-http-client"
 
+//    compile 'org.grails:grails-datastore-rest-client'
+
+
 
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.0"

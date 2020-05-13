@@ -6,4 +6,5 @@ beans = {
     userPasswordEncoderListener(UserPasswordEncoderListener)
     accessTokenJsonRenderer(CustomAppRestAuthTokenJsonRenderer)
     customTenentResolver(CustomTenentResolver)
+    //rest(grails.plugins.rest.client.RestBuilder)
 }
