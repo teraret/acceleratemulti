@@ -69,6 +69,7 @@ grails:
         defaultScope: singleton
     converters:
         encoding: UTF-8
+
 ---
 grails:
     cors:
@@ -77,6 +78,10 @@ grails:
 sendgrid:
     username : harishbabu1802
     password : J@ihanuman1802
+---
+resellerclub:
+    searchdomain: https://test.httpapi.com/api/domains/search.json?auth-userid=679019&api-key=RV5s123fI4ZcmnITxEYKMUMri2Co4KlN&no-of-records=10&page-no=1
+
 ---
 grails:
     gorm:

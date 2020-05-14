@@ -1,13 +1,10 @@
 package usermanagement
 
-import io.micronaut.core.annotation.Introspected
 
-@Introspected
 class Staff {
 
     private String name
     private  Integer age
-    private String status
     private String profession
 
     Staff() {
@@ -27,14 +24,6 @@ class Staff {
 
     void setAge(Integer age) {
         this.age = age
-    }
-
-    String getStatus() {
-        return status
-    }
-
-    void setStatus(String status) {
-        this.status = status
     }
 
     String getProfession() {

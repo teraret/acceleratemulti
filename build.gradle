@@ -72,11 +72,7 @@ dependencies {
     compile 'com.sendgrid:sendgrid-java:4.0.1'
 
     //Rest Client 
-    compile "io.micronaut:micronaut-http-client"
-
-//    compile 'org.grails:grails-datastore-rest-client'
-
-
+    //compile "io.micronaut:micronaut-http-client"
 
     runtime "org.apache.tomcat:tomcat-jdbc"
     runtime "javax.xml.bind:jaxb-api:2.3.0"
