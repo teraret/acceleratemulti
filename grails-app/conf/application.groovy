@@ -29,6 +29,18 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 
 grails.plugin.springsecurity.rest.token.storage.jwt.secret='teraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretloveteraretlove'
 
+
+grails {
+	mongo {
+		host = "localhost"
+		port = 27107
+		username = ""
+		password = ""
+		databaseName = "accelerate"
+	}
+}
+
+
 //grails {
 //  plugin {
 //    springsecurity {
