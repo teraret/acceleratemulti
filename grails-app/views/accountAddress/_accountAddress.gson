@@ -1,7 +1,0 @@
-import crm.AccountAddress
-
-model {
-	AccountAddress accountAddress
-}
-
-json g.render(accountAddress, [resolveTemplate: false])

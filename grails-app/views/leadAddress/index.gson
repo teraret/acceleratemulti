@@ -1,8 +1,0 @@
-import crm.LeadAddress
-
-model {
-	Iterable<LeadAddress> leadAddressList
-}
-
-json tmpl.leadAddress(leadAddressList ?: [])
-

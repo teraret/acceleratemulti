@@ -14,9 +14,10 @@ group "acceleratemulti"
 
 apply plugin:"eclipse"
 apply plugin:"idea"
-//apply plugin:"war"
+apply plugin:"war"
 apply plugin:"org.grails.grails-web"
 apply plugin:"org.grails.plugins.views-json"
+apply plugin: "org.grails.grails-doc"
 
 repositories {
     maven { url "https://repo.grails.org/grails/core" }
@@ -66,6 +67,7 @@ dependencies {
 
     compile "org.grails.plugins:mongodb"
 
+  
     //Mysql
    // runtime "mysql:mysql-connector-java:5.1.46"
     //Spring Security Core

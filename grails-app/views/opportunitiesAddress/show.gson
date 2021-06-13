@@ -1,7 +1,0 @@
-import crm.OpportunitiesAddress
-
-model {
-	OpportunitiesAddress opportunitiesAddress
-}
-
-json tmpl.opportunitiesAddress(opportunitiesAddress)

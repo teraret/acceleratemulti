@@ -1,8 +1,0 @@
-import crm.AccountAddress
-
-model {
-	Iterable<AccountAddress> accountAddressList
-}
-
-json tmpl.accountAddress(accountAddressList ?: [])
-

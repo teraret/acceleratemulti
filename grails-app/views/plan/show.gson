@@ -1,7 +1,0 @@
-import usermanagement.Plan
-
-model {
-	Plan plan
-}
-
-json tmpl.plan(plan)

@@ -1,0 +1,12 @@
+crm.$AccountAddressServiceImplementation
+crm.$AccountServiceImplementation
+crm.$ContactAddressServiceImplementation
+crm.$ContactServiceImplementation
+crm.$LeadAddressServiceImplementation
+crm.$LeadServiceImplementation
+crm.$OpportunitiesAddressServiceImplementation
+crm.$OpportunitiesServiceImplementation
+usermanagement.$OrganisationServiceImplementation
+usermanagement.$PlanServiceImplementation
+usermanagement.$ProductServiceImplementation
+usermanagement.$RegisterServiceImplementation

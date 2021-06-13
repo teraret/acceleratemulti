@@ -82,12 +82,15 @@ grails:
 #resellerclub:
 #    searchdomain: https://test.httpapi.com/api/domains/search.json?auth-userid=679019&api-key=RV5s123fI4ZcmnITxEYKMUMri2Co4KlN&no-of-records=10&page-no=1
 
+
+
 ---
 grails:
     gorm:
         multiTenancy:
             mode: DISCRIMINATOR
             tenantResolverClass: org.grails.datastore.mapping.multitenancy.web.SubDomainTenantResolver
+
 
 ---
 #hibernate:

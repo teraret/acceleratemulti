@@ -1,0 +1,4 @@
+package resellerclub
+
+class Orders {
+}

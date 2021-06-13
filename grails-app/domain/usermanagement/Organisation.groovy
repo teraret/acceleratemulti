@@ -1,6 +1,9 @@
 package usermanagement
 
+import org.bson.types.ObjectId
+
 class Organisation {
+    ObjectId id
     String name
     String namespace
     String description
@@ -22,5 +25,4 @@ class Organisation {
         website nullable: true, blank: true
         fax nullable: true, blank: true
     }
-
 }

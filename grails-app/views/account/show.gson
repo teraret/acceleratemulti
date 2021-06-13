@@ -1,7 +1,0 @@
-import crm.Account
-
-model {
-	Account account
-}
-
-json tmpl.account(account)

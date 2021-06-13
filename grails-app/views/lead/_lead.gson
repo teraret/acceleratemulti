@@ -1,7 +1,0 @@
-import crm.Lead
-
-model {
-	Lead lead
-}
-
-json g.render(lead, [resolveTemplate: false])

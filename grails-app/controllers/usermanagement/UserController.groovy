@@ -1,6 +1,9 @@
 package usermanagement
 
 import grails.validation.ValidationException
+import org.grails.datastore.mapping.query.api.Criteria
+import org.springframework.web.bind.annotation.RequestBody
+
 import static org.springframework.http.HttpStatus.CREATED
 import static org.springframework.http.HttpStatus.NOT_FOUND
 import static org.springframework.http.HttpStatus.NO_CONTENT
@@ -13,19 +16,60 @@ import grails.gorm.transactions.Transactional
 @ReadOnly
 class UserController {
 
+    static namespace = 'v1'
+
     UserService userService
+    //UserServiceImplService userServiceImplService
 
     static responseFormats = ['json', 'xml']
-    static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
+    static allowedMethods = [save: "POST",filter:"POST", patch:"PATCH",update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond userService.list(params), model:[userCount: userService.count()]
+        respond userService.list(params)
+
+        //, model:[userCount: userService.count()]
     }
 
     def show(Long id) {
         respond userService.get(id)
     }
+
+
+//    def filter(UserFilter userFilter){
+//
+//       // def user = userService.createCriteria()
+//
+//        Criteria c = User.createCriteria()
+//
+//        def result = c.list{
+//
+//           // eq("mobile","8667710055")
+//
+//            userFilter.filterValues.each {  value ->
+//
+//                if(value.operation=="equal"){
+//                    eq(value.key,value.value)
+//                } else if (value.operation=="contains"){
+//                    like(value.key,"%"+value.value+"%")
+//                } else {
+//                    ne(value.key,value.value)
+//
+//                }
+//
+//
+//            }
+//
+//        }
+//
+//        respond result
+//    }
+    @Transactional
+    def patch(){
+
+    }
+
+
 
     @Transactional
     def save(User user) {

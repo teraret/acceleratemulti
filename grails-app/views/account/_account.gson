@@ -1,7 +1,0 @@
-import crm.Account
-
-model {
-	Account account
-}
-
-json g.render(account, [resolveTemplate: false])
