@@ -31,41 +31,16 @@ class UserController {
         //, model:[userCount: userService.count()]
     }
 
-    def show(Long id) {
-        respond userService.get(id)
-    }
-
-
-//    def filter(UserFilter userFilter){
-//
-//       // def user = userService.createCriteria()
-//
-//        Criteria c = User.createCriteria()
-//
-//        def result = c.list{
-//
-//           // eq("mobile","8667710055")
-//
-//            userFilter.filterValues.each {  value ->
-//
-//                if(value.operation=="equal"){
-//                    eq(value.key,value.value)
-//                } else if (value.operation=="contains"){
-//                    like(value.key,"%"+value.value+"%")
-//                } else {
-//                    ne(value.key,value.value)
-//
-//                }
-//
-//
-//            }
-//
-//        }
-//
-//        respond result
-//    }
     @Transactional
-    def patch(){
+    def patch(List<User> users){
+
+        try {
+            userService.saveAll(users)
+        } catch (ValidationException e) {
+            return
+        }
+
+        respond users, [status: CREATED, view:"index"]
 
     }
 

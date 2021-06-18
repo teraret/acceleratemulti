@@ -1,9 +1,19 @@
 package usermanagement
 
+import grails.gorm.services.Service
 import grails.gorm.transactions.Transactional
 
+interface IUserService{
+    User get(Serializable id)
+
+    void delete(Serializable id)
+
+    User save(User user)
+}
+
 @Transactional
-class UserService {
+@Service(User)
+abstract class UserService implements IUserService {
 
     List<User> list(params){
 
@@ -22,33 +32,6 @@ class UserService {
 
             }
 
-//            and {
-//                if(params.enabled == 1){
-//                    eq('enabled',false)
-//                }
-
-//            }
-
-
-//
-//
-//
-//            if(typeof params.mobileVerified == "boolean"){
-//                eq('mobileVerified',Boolean.parseBoolean(params.mobileVerified))
-//            }
-//
-//            if(typeof params.accountExpired == "boolean"){
-//                eq('accountExpired',Boolean.parseBoolean(params.accountExpired))
-//            }
-//
-//            if(typeof params.accountLocked == "boolean"){
-//                eq('accountLocked',Boolean.parseBoolean(params.accountLocked))
-//            }
-//
-//            if(typeof params.passwordExpired == "boolean"){
-//                eq('passwordExpired',Boolean.parseBoolean(params.passwordExpired))
-//            }
-
         }
     }
 
@@ -57,14 +40,6 @@ class UserService {
             User.save(user)
         }
         return users
-    }
-
-    User save(User user){
-        return User.save(user)
-    }
-
-    void delete(Serializable id){
-        User.delete(id)
     }
 
 }

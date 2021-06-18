@@ -74,65 +74,11 @@ grails:
 grails:
     cors:
         enabled: true
-#---
-#sendgrid:
-#    username : harishbabu1802
-#    password : J@ihanuman1802
-#---
-#resellerclub:
-#    searchdomain: https://test.httpapi.com/api/domains/search.json?auth-userid=679019&api-key=RV5s123fI4ZcmnITxEYKMUMri2Co4KlN&no-of-records=10&page-no=1
-
-
 
 ---
 grails:
     gorm:
         multiTenancy:
             mode: DISCRIMINATOR
-            tenantResolverClass: org.grails.datastore.mapping.multitenancy.web.SubDomainTenantResolver
+            tenantResolverClass: org.grails.datastore.mapping.multitenancy.web.SessionTenantResolver
 
-
----
-#hibernate:
-#    cache:
-#        queries: false
-#        use_second_level_cache: false
-#        use_query_cache: false
-#dataSource:
-#    pooled: true
-#    jmxExport: true
-#    driverClassName: com.mysql.jdbc.Driver
-#    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-#    username: root
-#    password: B@vana20
-#environments:
-#    development:
-#        dataSource:
-#            dbCreate: update
-#            url: jdbc:mysql://localhost:3306/teraret
-#    test:
-#        dataSource:
-#            dbCreate: update
-#            url: jdbc:mysql://localhost:3306/teraret
-#    production:
-#        dataSource:
-#            dbCreate: update
-#            url: jdbc:mysql://localhost:3306/teraret
-#            properties:
-#                jmxEnabled: true
-#                initialSize: 5
-#                maxActive: 50
-#                minIdle: 5
-#                maxIdle: 25
-#                maxWait: 10000
-#                maxAge: 600000
-#                timeBetweenEvictionRunsMillis: 5000
-#                minEvictableIdleTimeMillis: 60000
-#                validationQuery: SELECT 1
-#                validationQueryTimeout: 3
-#                validationInterval: 15000
-#                testOnBorrow: true
-#                testWhileIdle: true
-#                testOnReturn: false
-#                jdbcInterceptors: ConnectionState
-#                defaultTransactionIsolation: 2 # TRANSACTION_READ_COMMITTED
