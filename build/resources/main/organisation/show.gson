@@ -1,7 +1,0 @@
-import usermanagement.Organisation
-
-model {
-	Organisation organisation
-}
-
-json tmpl.organisation(organisation)
