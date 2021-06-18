@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+  pre_build:
+    commands:
+      - echo "Entered Pre Build Phase"
+  build:
+    commands:
+      - echo "Entered Build Phase"
+      - gradle assemble
+      - echo "Assemble complete"
+      - mv build/libs/*.war ./ROOT.war
+
+  post_build:
+    commands:
+      - echo "Entered Post Build Phase"
+artifacts:
+  files:
+     - ROOT.war
