@@ -15,6 +15,7 @@ class Opportunities implements MultiTenant<Opportunities> {
     String country
     String state
     String zip
+    boolean enabled = true
     Date dateCreated
     Date lastUpdated
     User createdBy

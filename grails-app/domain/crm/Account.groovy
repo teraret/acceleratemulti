@@ -17,6 +17,7 @@ class Account implements MultiTenant<Account> {
     String mobile
     String website
     String fax
+    boolean enabled = true
     Date dateCreated
     Date lastUpdated
     User createdBy

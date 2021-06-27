@@ -15,6 +15,7 @@ class Lead  implements MultiTenant<Lead> {
     String country
     String state
     String zip
+    boolean enabled = true
     Date dateCreated
     Date lastUpdated
     User createdBy

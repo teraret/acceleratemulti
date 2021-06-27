@@ -18,18 +18,22 @@ abstract class UserService implements IUserService {
     List<User> list(params){
 
         return User.createCriteria().list( max:params.max, offset:params.offset){
-
+            eq('enabled',true)
             if(params.mobile){
-                like('mobile',"%"+params.mobile+"%")
+                and {
+                    like('mobile',"%"+params.mobile+"%")
+                }
             }
 
             if(params.email){
-                like('email',"%"+params.email+"%")
-
+                and {
+                    like('email',"%"+params.email+"%")
+                }
             }
             if(params.username){
-                like('username',"%"+params.username+"%")
-
+                and {
+                    like('username',"%"+params.username+"%")
+                }
             }
 
         }
